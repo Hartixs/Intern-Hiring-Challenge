@@ -13,10 +13,6 @@ This repository contains a ROS2 Python package demonstrating a closed-loop **Vis
 
 Follow these step-by-step instructions to build the workspace, launch the custom simulation environment, and run the visual servoing node.
 
-## 🚀 Quick Start & Launch Instructions
-
-Follow these step-by-step instructions to build the workspace, launch the custom simulation environment, and run the visual servoing node.
-
 ### 1. Build the Workspace
 First, clone the repository into your ROS2 workspace and build the package using `colcon`.
 
