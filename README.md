@@ -97,13 +97,3 @@ To prevent mechanical collision with the target, a stopping condition is require
 * **OS:** Ubuntu 20.04 (Foxy) or 22.04 (Humble)
 * **ROS2 Packages:** `rclpy`, `sensor_msgs`, `geometry_msgs`, `cv_bridge`
 * **External Dependencies:** `opencv-python`, `numpy`
-
-```bash
-# Clone into your ROS2 workspace
-cd ~/turtlebot_ws/src
-git clone [YOUR_REPO_URL]
-
-# Build the package
-cd ~/turtlebot_ws
-colcon build --packages-select visual_servo_pkg
-source install/setup.bash
