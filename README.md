@@ -9,6 +9,53 @@
 This repository contains a ROS2 Python package demonstrating a closed-loop **Visual Servoing** system. The objective is to autonomously navigate a differential-drive robot (TurtleBot3 Waffle Pi) towards a specific colored target (a green sphere) using pure computer vision and proportional control logic, while dynamically handling edge cases such as target occlusion and proximity-based halting.
 
 ---
+## 🚀 Quick Start & Launch Instructions
+
+Follow these step-by-step instructions to build the workspace, launch the custom simulation environment, and run the visual servoing node.
+
+## 🚀 Quick Start & Launch Instructions
+
+Follow these step-by-step instructions to build the workspace, launch the custom simulation environment, and run the visual servoing node.
+
+### 1. Build the Workspace
+First, clone the repository into your ROS2 workspace and build the package using `colcon`.
+
+```bash
+# Clone the repository
+git clone <YOUR_REPO_URL>
+cd <YOUR_REPO_NAME>
+
+# Build the package
+colcon build --packages-select visual_servo_pkg
+
+# Source the workspace
+source install/setup.bash
+```
+
+### 2. Launch the Custom Simulation Environment
+Instead of the default Gazebo empty world, this repository utilizes a custom launch file (`world_launch.py`) that loads an environment pre-configured with the required green sphere target (`world_with_da_green_sphere.sdf`).
+
+In your sourced terminal, set the TurtleBot3 model to `waffle_pi` (required to enable the camera sensor) and start the simulation:
+
+```bash
+export TURTLEBOT3_MODEL=waffle_pi
+ros2 launch world_launch.py
+```
+*(Note: Since `world_launch.py` is located in the root of the repository, ensure you run this command from the repository's root directory).*
+
+### 3. Run the Visual Servoing Node
+Once the Gazebo simulation has fully loaded and both the robot and the green sphere are visible, open a **new terminal**, navigate to your workspace, source it, and execute the control node:
+
+```bash
+# Navigate to your workspace and source it
+cd <YOUR_REPO_NAME>
+source install/setup.bash
+
+# Run the camera tracking and control node
+ros2 run visual_servo_pkg camera_reader
+```
+
+---
 
 ## 🧠 Technical Implementation & Problem Solving
 
